@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
@@ -36,8 +37,14 @@ public class SendingRequestUsingFile {
 
         System.out.println(response.asPrettyString());
 
-       assertThat(response.path("booking.firstname"),equalTo("Jim"));
+       assertThat(response.path("booking.firstname"),equalTo("Gaurav"));
        assertThat(response.statusCode(),equalTo(200));
+       responseSpecification.body(matchesJsonSchemaInClasspath("createBookingschema.json"));
+    }
 
+    @Test
+    public void createBookingUsingFileBDD(){
+        RestAssured.given(requestSpecification).body(file).when().post("/booking")
+                .then().body(matchesJsonSchemaInClasspath("createBookingschema.json"));
     }
 }

@@ -1,0 +1,37 @@
+Request method:	POST
+Request URI:	https://restful-booker.herokuapp.com/booking
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=application/json
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+C:\Users\d629263\IdeaProjects\RestAssuredTraining\src\test\resources\createbookingbody.json
+HTTP/1.1 200 OK
+Server: Cowboy
+Connection: keep-alive
+X-Powered-By: Express
+Content-Type: application/json; charset=utf-8
+Content-Length: 195
+Etag: W/"c3-UZwkfwZRI4B5+7K6iGw3IM7FuWE"
+Date: Fri, 11 Aug 2023 00:41:03 GMT
+Via: 1.1 vegur
+
+{
+    "bookingid": 50,
+    "booking": {
+        "firstname": "Shalini",
+        "lastname": "Rai",
+        "totalprice": 153177,
+        "depositpaid": true,
+        "bookingdates": {
+            "checkin": "2018-01-01",
+            "checkout": "2019-01-01"
+        },
+        "additionalneeds": "Gift"
+    }
+}
